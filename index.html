@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Nalamasa Krishna | Lawyer & Social Activist</title>
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-main: #1a1a1a;
+            --text-muted: #555555;
+            --accent: #8b0000; /* Deep Crimson */
+            --tag-bg: #f5f5f5;
+            --border-color: #e0e0e0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: "Georgia", Georgia, serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        a:hover {
+            opacity: 0.8;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+        }
+
+        .nav-logo {
+            font-family: "Georgia", serif;
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--text-main);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-main);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Container layouts */
+        section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 2.5rem;
+        }
+
+        /* Tags system */
+        .tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .tag {
+            background-color: var(--tag-bg);
+            color: var(--text-muted);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Home Section */
+        #home {
+            padding-top: 7rem;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .bio-text {
+            font-size: 1.1rem;
+            max-width: 750px;
+        }
+
+        /* Timeline / Education */
+        .timeline-item {
+            margin-bottom: 2rem;
+            position: relative;
+            padding-left: 1.5rem;
+            border-left: 2px solid var(--accent);
+        }
+
+        .timeline-year {
+            font-weight: bold;
+            color: var(--accent);
+        }
+
+        .timeline-degree {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .timeline-institution {
+            color: var(--text-muted);
+        }
+
+        /* Grid for Legal & Activism */
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none; /* Simplification for mobile view spacing */
+            }
+            .hero-title {
+                font-size: 2.2rem;
+            }
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .card ul {
+            list-style-type: square;
+            padding-left: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        .card li {
+            margin-bottom: 0.75rem;
+        }
+
+        /* Milestone Callout Box */
+        .milestone-box {
+            background-color: var(--tag-bg);
+            border-left: 4px solid var(--accent);
+            padding: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        /* Contact Form */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border-color);
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        input:focus, textarea:focus {
+            outline: 1px solid var(--accent);
+        }
+
+        button {
+            background-color: var(--text-main);
+            color: #ffffff;
+            padding: 0.75rem 2rem;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        button:hover {
+            background-color: var(--accent);
+        }
+
+        /* Footer & Social handles */
+        footer {
+            background-color: var(--tag-bg);
+            padding: 4rem 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .social-links {
+            list-style: none;
+        }
+
+        .social-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .social-links a {
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">Dr. N. Krishna</div>
+            <ul class="nav-links">
+                <li><a href="#home">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#advocacy">Advocacy</a></li>
+                <li><a href="#milestones">Milestones</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page 1: Home / Hero -->
+    <section id="home">
+        <h1 class="hero-title">Dr. Nalamasa Krishna</h1>
+        <p class="hero-subtitle">Lawyer, Social Activist, & Advocate for Regional Statehood</p>
+        <p class="bio-text">
+            Active in public advocacy since 2010, Dr. Nalamasa Krishna bridges the gap between legal defense and grassroots social movements in Telangana, India. Holding an advanced academic background from Osmania University and the English and Foreign Languages University, his career spans constitutional law practice, regional political movements, and environmental defense.
+        </p>
+        <div class="tag-container">
+            <span class="tag">#HumanRightsAdvocate</span>
+            <span class="tag">#TelanganaActivism</span>
+            <span class="tag">#ConstitutionalLaw</span>
+            <span class="tag">#SocialJustice</span>
+        </div>
+    </section>
+
+    <!-- Page 2: Education -->
+    <section id="education">
+        <h2 class="section-title">Academic Foundation</h2>
+        <div class="timeline-item">
+            <div class="timeline-degree">Doctor of Philosophy (Ph.D.)</div>
+            <div class="timeline-institution">English and Foreign Languages University (EFLU)</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-degree">Master of Arts (M.A.)</div>
+            <div class="timeline-institution">Osmania University</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-degree">Bachelor of Laws (LL.B.)</div>
+            <div class="timeline-institution">Osmania University</div>
+        </div>
+        <p style="margin-top: 2rem; color: var(--text-muted);">
+            Utilizing a deep understanding of language, literature, and the framework of Indian law to champion civil liberties and democratic reforms.
+        </p>
+        <div class="tag-container">
+            <span class="tag">#OsmaniaAlumni</span>
+            <span class="tag">#EFLU</span>
+            <span class="tag">#ScholarActivist</span>
+        </div>
+    </section>
+
+    <!-- Page 3: Legal Career & Activism -->
+    <section id="advocacy">
+        <h2 class="section-title">Key Fronts & Advocacy</h2>
+        <div class="grid-container">
+            <div class="card">
+                <h3>Legal Practice</h3>
+                <p style="margin-top: 1rem;">Serving as a practicing defense lawyer focusing on civil liberties, constitutional rights, and public defense within the courts of Telangana.</p>
+            </div>
+            <div class="card">
+                <h3>Movement Leadership</h3>
